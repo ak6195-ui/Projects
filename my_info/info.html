@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+</head>
+<body style="background-color:rgb(12,242,219)">
+
+  <div id="loginPage">
+    <h2 style="background-color:burlywood;color:black">Login</h2>
+
+    <label>Name:</label><br>
+    <input type="text" id="name"><br><br>
+
+    <label>Email:</label><br>
+    <input type="text" id="email"><br><br>
+
+    <label>Age:</label><br>
+    <input type="number" id="age"><br><br>
+
+    <label >EDUCATION: </label><br><br>
+    <input type="text" id="education"><br><br>
+
+    <button onclick="login()">Login</button>
+    <p id="errorMsg" style="color:red;"></p>
+  </div>
+
+  <div id="profilePage" style="display:none;">
+    <h2 style="background-color:chocolate">Welcome!</h2>
+    <p>  Name: <span style="background-color:aquamarine"id="showName"></span></p>
+    <p>Email: <span style="background-color:cyan" id="showEmail"></span></p>
+    <p> AGE:<span style="background-color:chocolate"id="showAge"></span></p>
+    <P> EDUCATION: <span style="background-color:crimson" id="showeducation"></span></P>
+    <br>
+    <img src="abi.jpg" height="300"> 
+
+    <dl>
+        <dt>
+            what is ABI TRYING TO DO :
+
+        </dt>
+        <dd>
+            abi is trying to get better !!!
+        </dd>
+    </dl>
+    <hr>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script>
+    function login() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var age = document.getElementById("age").value;
+      var education=document.getElementById("education").value;
+
+
+      if (name == "") {
+        document.getElementById("errorMsg").innerHTML = "Please enter your name.";
+      } else if (!email.endsWith("@gmail.com")) {
+        document.getElementById("errorMsg").innerHTML = "Email must be a @gmail.com address.";
+      } else {
+        document.getElementById("showName").innerHTML = name;
+        document.getElementById("showEmail").innerHTML = email;
+        document.getElementById("showAge").innerHTML=age;
+        document.getElementById("showeducation").innerHTML=education;
+        document.getElementById("loginPage").style.display = "none";
+        document.getElementById("profilePage").style.display = "block";
+      }
+    }
+
+    function logout() {
+      document.getElementById("loginPage").style.display = "block";
+      document.getElementById("profilePage").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
