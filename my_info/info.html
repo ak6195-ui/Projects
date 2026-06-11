@@ -6,6 +6,7 @@
   <meta name="author" content="abi">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Login</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body style="background-color:rgb(12,242,219)">
 
@@ -28,12 +29,28 @@
     <p id="errorMsg" style="color:red;"></p>
   </div>
 
-  <div id="profilePage" style="display:none;">
+  <!-- <div id="profilePage" style="display:none;">
     <h2 style="background-color:chocolate">Welcome!</h2>
     <p>  Name: <span style="background-color:aquamarine"id="showName"></span></p>
     <p>Email: <span style="background-color:cyan" id="showEmail"></span></p>
     <p> AGE:<span style="background-color:chocolate"id="showAge"></span></p>
-    <P> EDUCATION: <span style="background-color:crimson" id="showeducation"></span></P>
+    <P> EDUCATION: <span style="background-color:crimson" id="showeducation"></span></P> -->
+    <div id="profilePage" style="display:none;" class="lala">
+    <table border="1">
+        <tr>
+            <th >Name</th>
+            <th >Age</th>
+            <th>Email</th>
+            <th  >Education</th>
+        </tr>
+        <tr>
+            <td id="showName"></td>
+            <td id="showAge"></td>
+            <td id="showEmail"></td>
+            <td id="showeducation"></td>
+        </tr>
+      
+      </table>
     <br>
     <img src="abi.jpg" height="300"> 
 
@@ -49,33 +66,8 @@
     <hr>
     <button onclick="logout()">Logout</button>
   </div>
+  <script src="index.js">
 
-  <script>
-    function login() {
-      var name = document.getElementById("name").value;
-      var email = document.getElementById("email").value;
-      var age = document.getElementById("age").value;
-      var education=document.getElementById("education").value;
-
-
-      if (name == "") {
-        document.getElementById("errorMsg").innerHTML = "Please enter your name.";
-      } else if (!email.endsWith("@gmail.com")) {
-        document.getElementById("errorMsg").innerHTML = "Email must be a @gmail.com address.";
-      } else {
-        document.getElementById("showName").innerHTML = name;
-        document.getElementById("showEmail").innerHTML = email;
-        document.getElementById("showAge").innerHTML=age;
-        document.getElementById("showeducation").innerHTML=education;
-        document.getElementById("loginPage").style.display = "none";
-        document.getElementById("profilePage").style.display = "block";
-      }
-    }
-
-    function logout() {
-      document.getElementById("loginPage").style.display = "block";
-      document.getElementById("profilePage").style.display = "none";
-    }
   </script>
 
 </body>
